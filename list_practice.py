@@ -1,14 +1,14 @@
 def run ():
     
 
-    # number = [i for i in range(1, 100000) if i % 36 == 0]
+    number = [i for i in range(1, 100000) if i % 36 == 0]
 
-    # for i in range (0, 100000):
-    #     if (i % 4 == 0 and i % 6 == 0 and i % 9 == 0):
-        # ansuer.append()
-        # if ansuer == i * 6:
-        #     elif == ansuer i * 9
-        #     continue:
+    for i in range (0, 100000):
+        if (i % 4 == 0 and i % 6 == 0 and i % 9 == 0):
+        ansuer.append()
+        if ansuer == i * 6:
+            elif == ansuer i * 9
+            continue:
 
 
     print(number)
