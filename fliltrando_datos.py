@@ -88,8 +88,7 @@ def run():
     FilterName= list(filter(lambda worker: worker ['language']== 'python',DATA))
     Filterorganization= list(map(lambda worker: worker ['organization']== 'Platzi',DATA))
     all_python_devs = [worker["name"] for worker in DATA if worker["age"] > 18]
-    old_confirmation = lambda worker_age: worker_age > 70
-    old_people = [worker | {'old': old_confirmation(worker['age'])} for worker in DATA]
+    old_people = [worker | {'old': worker['age']> 70} for worker in DATA]
     for worker in old_people:
         print(worker)
     
