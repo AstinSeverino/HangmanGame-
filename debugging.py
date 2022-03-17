@@ -12,7 +12,7 @@ def run ():
     try:
         num1= int(input('ingrese su numero para saber la multi'))
         if num1 <= 0:
-            raise ValueError('Negative number is not valid')
+            raise Exception('Negative number is not valid')
             #esta el uso de raise asi funciona tenemos que investigar de exceptions 
         print(divisor(num1))
         print('bye my friend')
