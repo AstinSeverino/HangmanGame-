@@ -11,9 +11,11 @@ from random import*
     #         words.append(line) 
     # print(words)        
 
+
 def proData():
-    # caracterWord=[]
+   
     # f =["calor", "perro", "ejpss", "psdns"]
+    print("\nC O M I E N Z A  E L J U E G O \n A D I V I N A  L A  L E T R A\n\n")
     with open("./archivos/data.txt", "r", encoding="utf-8") as f:
         #abre el archivo y lo pone en una variable es esta caso f 
         dataList=dict(enumerate(f,1))
@@ -25,9 +27,13 @@ def proData():
          #random().choice(nombre de la variable aqui) necesita los parentisis para poder funcionar por que es una clase        
          #esto seleciona random algo lista letra plabra etc
         print(valor)
-        valor=list(enumerate(valor,1))
+        valor=dict(enumerate(valor,1))
         print(valor)
-       
+        print(len(valor)) 
+        print(" _ " * len(valor))
+        
+   
+          
    
 def run ():
     pass
