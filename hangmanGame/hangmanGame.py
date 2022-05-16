@@ -28,10 +28,15 @@ def proData():
          #esto seleciona random algo lista letra plabra etc
         print(valor)
         valor=dict(enumerate(valor,1))
+        comprobador
         print(valor)
         print(len(valor)) 
         print(" _ " * len(valor))
-        
+
+def comprobador():
+    verificar= input("INTRUCE LA LETRA")
+    valor.get(verificar, "no se encontro")
+
    
           
    
