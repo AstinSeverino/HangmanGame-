@@ -22,9 +22,10 @@ with open("./archivos/data.txt", "r", encoding="utf-8") as f:
      #esto seleciona random algo lista letra plabra etc
     print(valor)
     #para quitar los acentos a las palabras 
-    new_sentence = valor.maketrans('áéíóú', 'aeiou')
-    n_valor = valor.translate(new_sentence)
-    print(n_valor)
+    # new_sentence = valor.maketrans('áéíóú', 'aeiou')
+    # n_valor = valor.translate(new_sentence)
+    # print(n_valor)
+    n_valor= valor
     display=[]
     wordLen=len(n_valor)
     print(wordLen)
