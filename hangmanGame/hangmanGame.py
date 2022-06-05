@@ -2,7 +2,7 @@ from multiprocessing import Value
 from optparse import Values
 from random import*
 import random
-from string import maketrans
+# from string import maketrans
 
 
 
@@ -23,8 +23,10 @@ with open("./archivos/data.txt", "r", encoding="utf-8") as f:
      #esto seleciona random algo lista letra plabra etc
     print(valor)
     #para quitar los acentos a las palabras 
-    new_sentence = valor.maketrans('áéíóú', 'aeiou')
-    n_valor = valor.translate(new_sentence)
+    intab="áéíóú"
+    outtab="aeiou"
+    new_sentence =valor.maketrans(intab, outtab)
+    n_valor = (valor.translate(new_sentence))
     print(n_valor)
     display=[]
     wordLen=len(n_valor)
@@ -47,11 +49,24 @@ with open("./archivos/data.txt", "r", encoding="utf-8") as f:
         
         
 
-   
+def prueba():
+    sentence = "Mi mamá"
+    #"Mi mamá le compró un balón de fútbol a mi hermano"
+
+    new_sentence = sentence.maketrans('áéíóú', 'aeiou')
+    n_sentence = sentence.translate(new_sentence)
+    print(n_sentence)
+    test=input("introduce algo")
+    if n_sentence == test:
+        print("funciona")
+    else:
+        print("no funciono")
+    
+ 
           
    
 def run ():
-    pass
+    prueba()
 
 
 if __name__=="__main__":
