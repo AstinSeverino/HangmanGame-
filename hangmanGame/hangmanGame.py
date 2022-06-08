@@ -35,9 +35,9 @@ with open("./archivos/data.txt", "r", encoding="utf-8") as f:
     for line in n_valor:
         words.append(line.strip().upper())
 
-    wordLen=len(n_valor)
+    wordLen=len(words)
     print(wordLen)
-    for letter in n_valor:
+    for letter in words:
         display += "_"
     print(display)
 
