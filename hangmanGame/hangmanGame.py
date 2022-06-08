@@ -30,15 +30,20 @@ with open("./archivos/data.txt", "r", encoding="utf-8") as f:
     n_valor = valor2.translate(new_sentence)
     print(n_valor)
     display=[]
+    
+    words=[]
+    for line in n_valor:
+        words.append(line.strip().upper())
+
     wordLen=len(n_valor)
     print(wordLen)
     for letter in n_valor:
         display += "_"
     print(display)
 
-    words=[]
-    for line in n_valor:
-        words.append(line.strip().upper())
+    # words=[]
+    # for line in n_valor:
+    #     words.append(line.strip().upper())
 
     while "_" in display:
         guessWord= input("Adivina la palabra \n").upper()
@@ -48,7 +53,7 @@ with open("./archivos/data.txt", "r", encoding="utf-8") as f:
             if word == guessWord:
                 display[i]=word
         print(display)
-        print(words)
+        print()
         if not "_" in display:
             print("you wow u are fanstastic")
         
