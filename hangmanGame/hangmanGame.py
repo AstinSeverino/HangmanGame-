@@ -9,9 +9,9 @@ print("\nC O M I E N Z A  E L J U E G O \n A D I V I N A  L A  L E T R A\n\n")
 with open("./archivos/data.txt", "r", encoding="utf-8") as f:
     dataList=list(f)
     print()
-    words=[]
-    for line in dataList:
-        words.append(line.strip().upper())
+    # words=[]
+    # for line in dataList:
+    #     words.append(line.strip().upper())
     #abre el archivo y lo pone en una variable es esta caso f 
     
     # print(dataList)
@@ -36,15 +36,19 @@ with open("./archivos/data.txt", "r", encoding="utf-8") as f:
         display += "_"
     print(display)
 
+    words=[]
+    for line in n_valor:
+        words.append(line.strip().upper())
+
     while "_" in display:
         guessWord= input("Adivina la palabra \n").upper()
 
         for i in range(wordLen):
-            word= n_valor[i]
+            word= words[i]
             if word == guessWord:
                 display[i]=word
         print(display)
-        print(n_valor)
+        print(words)
         if not "_" in display:
             print("you wow u are fanstastic")
         
