@@ -30,7 +30,7 @@ with open("./archivos/data.txt", "r", encoding="utf-8") as f:
      #random().choice(nombre de la variable aqui) necesita los parentisis para poder funcionar por que es una clase        
      #esto seleciona random algo lista letra plabra etc
     # para quitar los acentos a las palabras 
-    valor2="".join(valor)
+    valor2="".join(lisTen)
     print(valor2)
     new_sentence = valor2.maketrans('áéíóú', 'aeiou')
     n_valor = valor2.translate(new_sentence)
@@ -65,7 +65,7 @@ with open("./archivos/data.txt", "r", encoding="utf-8") as f:
         print(display)
         print()
         if not "_" in display:
-            print("you wow u are fanstastic")
+            print("y o u   w o w   u   a r e   f a n s t a s t i c".upper())
         
         
 
