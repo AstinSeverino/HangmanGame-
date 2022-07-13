@@ -3,13 +3,13 @@ from optparse import Values
 from random import*
 import random
 
+from sqlalchemy import false, true
+endGame= False
 
 
 print("\nC O M I E N Z A  E L J U E G O \n A D I V I N A  L A  L E T R A\n\n")
 with open("./archivos/data.txt", "r", encoding="utf-8") as f:
     dataList=list(f)
-
-    print(dataList)
     # words=[]
     # for line in dataList:
     #     words.append(line.strip().upper())
@@ -24,17 +24,17 @@ with open("./archivos/data.txt", "r", encoding="utf-8") as f:
     for i in valor:
         lisTen.append(i.replace("\n", ""))
     lisTen.pop(-1) 
-    print(lisTen)
-    print(len(lisTen))
+    # print(lisTen)
+    # print(len(lisTen))
     # valor.strip().upper()
      #random().choice(nombre de la variable aqui) necesita los parentisis para poder funcionar por que es una clase        
      #esto seleciona random algo lista letra plabra etc
     # para quitar los acentos a las palabras 
     valor2="".join(lisTen)
-    print(valor2)
+    # print(valor2)
     new_sentence = valor2.maketrans('áéíóú', 'aeiou')
     n_valor = valor2.translate(new_sentence)
-    print(n_valor)
+    # print(n_valor)
 
     display=[]
 
@@ -46,24 +46,41 @@ with open("./archivos/data.txt", "r", encoding="utf-8") as f:
         
 
     wordLen=len(words)
-    print(wordLen)
+    # print(wordLen)
     for letter in words:
         display += "_"
     print(display)
 
-    # words=[]
-    # for line in n_valor:
-    #     words.append(line.strip().upper())
-
-    while "_" in display:
+    
+    while not endGame:
+        lives=7
         guessWord= input("Adivina la palabra \n").upper()
 
         for i in range(wordLen):
             word= words[i]
             if word == guessWord:
                 display[i]=word
-        print(display)
-        print()
+                print(display)
+                
+        if guessWord not in word:
+            lives -=1
+            print(lives)
+            if lives==0:
+                endGame=True
+                print("esto se acabo" "")
+
+                    
+          
+          
+                    
+        # if guessWord == True:
+        #     pass
+        # elif word!= guessWord: 
+        #     print("T R Y ".upper())
+        #     lives-1
+        #     print("assci")
+                
+        # print("el final final")
         if not "_" in display:
             print("y o u   w o w   u   a r e   f a n s t a s t i c".upper())
         
