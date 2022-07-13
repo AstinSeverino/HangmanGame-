@@ -51,9 +51,9 @@ with open("./archivos/data.txt", "r", encoding="utf-8") as f:
         display += "_"
     print(display)
 
-    
-    while not endGame:
-        lives=7
+    lives=7
+    while lives>0:
+        
         guessWord= input("Adivina la palabra \n").upper()
 
         for i in range(wordLen):
