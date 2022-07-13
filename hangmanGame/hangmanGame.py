@@ -53,7 +53,7 @@ with open("./archivos/data.txt", "r", encoding="utf-8") as f:
     print(display)
 
     lives=7
-    while lives>0:
+    while lives>0 :
         
         guessWord= input(" Adivina la palabra \n \n").upper()
 
@@ -63,7 +63,7 @@ with open("./archivos/data.txt", "r", encoding="utf-8") as f:
                 display[i]=word
                 print(display)
                 
-        if guessWord not in word:
+        if guessWord not in display:
             lives -=1
             print('T I E N E S  ', str(lives),"  ""V I D A S")
             if lives==0:
@@ -84,6 +84,7 @@ with open("./archivos/data.txt", "r", encoding="utf-8") as f:
         # print("el final final")
         if not "_" in display:
             print("y o u   w o w   u   a r e   f a n s t a s t i c".upper())
+            break
         
         
 
