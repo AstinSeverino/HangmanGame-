@@ -1,3 +1,4 @@
+from ast import Str
 from multiprocessing import Value
 from optparse import Values
 from random import*
@@ -7,7 +8,7 @@ from sqlalchemy import false, true
 endGame= False
 
 
-print("\nC O M I E N Z A  E L J U E G O \n A D I V I N A  L A  L E T R A\n\n")
+print("\nC O M I E N Z A  E L J U E G O \n A D I V I N A  L A  P A L A B R A\n\n")
 with open("./archivos/data.txt", "r", encoding="utf-8") as f:
     dataList=list(f)
     # words=[]
@@ -54,7 +55,7 @@ with open("./archivos/data.txt", "r", encoding="utf-8") as f:
     lives=7
     while lives>0:
         
-        guessWord= input("Adivina la palabra \n").upper()
+        guessWord= input(" Adivina la palabra \n \n").upper()
 
         for i in range(wordLen):
             word= words[i]
@@ -64,10 +65,10 @@ with open("./archivos/data.txt", "r", encoding="utf-8") as f:
                 
         if guessWord not in word:
             lives -=1
-            print(lives)
+            print('T I E N E S  ', str(lives),"  ""V I D A S")
             if lives==0:
                 endGame=True
-                print("esto se acabo" "")
+                print("S E   T E R M I N I N O   E L J U E G O" "\n \n")
 
                     
           
