@@ -3,11 +3,68 @@ from multiprocessing import Value
 from optparse import Values
 from random import*
 import random
+import os
 
 from sqlalchemy import false, true
 endGame= False
+stages = ['''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========
+''']
 
-
+os.system("clear")
 print("\nC O M I E N Z A  E L J U E G O \n A D I V I N A  L A  P A L A B R A\n\n")
 with open("./archivos/data.txt", "r", encoding="utf-8") as f:
     dataList=list(f)
@@ -55,20 +112,39 @@ with open("./archivos/data.txt", "r", encoding="utf-8") as f:
     lives=7
     while lives>0 :
         
-        guessWord= input(" Adivina la palabra \n \n").upper()
+        guessWord= input(" A D I V I N A  L A  P A L A B R A \n \n").upper()
 
         for i in range(wordLen):
             word= words[i]
             if word == guessWord:
+                os.system("clear")
                 display[i]=word
-                print(display)
+                print("\n\n",display)
                 
         if guessWord not in display:
             lives -=1
+            os.system("clear")
+            print("\n")
+            print(display)
             print('T I E N E S  ', str(lives),"  ""V I D A S")
+        if lives==6:
+            print(stages[-1])
+        elif lives==5:
+            print(stages[-2])
+        elif lives==4:
+            print(stages[-3])
+        elif lives==3:
+            print(stages[-4])
+        elif lives==2:
+            print(stages[-5])
+        elif lives==1:
+            print(stages[-6])
+        elif lives==0:
+            print(stages[-7])
+
             if lives==0:
                 endGame=True
-                print("S E   T E R M I N I N O   E L J U E G O" "\n \n")
+                print("S E   T E R M I N I N O   E L   J U E G O" "\n \n ""L A  P A L A B R A   E R A --", n_valor.upper().strip(),"--")
 
                     
           
@@ -83,7 +159,7 @@ with open("./archivos/data.txt", "r", encoding="utf-8") as f:
                 
         # print("el final final")
         if not "_" in display:
-            print("y o u   w o w   u   a r e   f a n s t a s t i c".upper())
+            print("y o u   w o n   u   a r e   f a n s t a s t i c".upper())
             break
         
         
