@@ -63,57 +63,39 @@ stages = ['''
       |
 =========
 ''']
-
+# limpia la pantalla de la terminal en unix
 os.system("clear")
 print("\nC O M I E N Z A  E L J U E G O \n A D I V I N A  L A  P A L A B R A\n\n")
+# Abre un archibo lee la info y la guarda en una variable 
 with open("./archivos/data.txt", "r", encoding="utf-8") as f:
     dataList=list(f)
-    # words=[]
-    # for line in dataList:
-    #     words.append(line.strip().upper())
-    #abre el archivo y lo pone en una variable es esta caso f 
-    
-    # print(dataList)
-    #crea un dicionario(Tambien podria ser lista o tubla si ponemos el nombre)y lo enemura con enumerate 
-    #y despues la variable y el numero donde arranca
-    # print(real)
+# Seleciona una palbra de la lista, le quita el salto de linea un salto de linea que tenia al final
     valor=random.choice(dataList)
     lisTen=[]
     for i in valor:
         lisTen.append(i.replace("\n", ""))
     lisTen.pop(-1) 
-    # print(lisTen)
-    # print(len(lisTen))
-    # valor.strip().upper()
-     #random().choice(nombre de la variable aqui) necesita los parentisis para poder funcionar por que es una clase        
-     #esto seleciona random algo lista letra plabra etc
-    # para quitar los acentos a las palabras 
+    #Quita los espacios de los string y para quitar los acentos a las palabras 
     valor2="".join(lisTen)
-    # print(valor2)
     new_sentence = valor2.maketrans('áéíóú', 'aeiou')
     n_valor = valor2.translate(new_sentence)
-    # print(n_valor)
-
+# Agrega las palabras a un str sin espacion y en mayus 
     display=[]
-
-    
     words=[]
     for line in n_valor: 
-        words.append(line.strip().upper())
-    
-        
-
+        words.append(line.strip().upper())       
     wordLen=len(words)
-    # print(wordLen)
+# Imprime los los quiones de la letra en la pantalla 
     for letter in words:
         display += "_"
     print(display)
-
+# Sistema de vidas
     lives=7
     while lives>0 :
         
         guessWord= input(" A D I V I N A  L A  P A L A B R A \n \n").upper()
-
+# Comprueba si la latra es la que entro el usuario si es asi la agrega a la lista para mosntrar
+# si no esta procede con el bucle 
         for i in range(wordLen):
             word= words[i]
             if word == guessWord:
@@ -146,27 +128,10 @@ with open("./archivos/data.txt", "r", encoding="utf-8") as f:
                 endGame=True
                 print("S E   T E R M I N I N O   E L   J U E G O" "\n \n ""L A  P A L A B R A   E R A --", n_valor.upper().strip(),"--")
 
-                    
-          
-          
-                    
-        # if guessWord == True:
-        #     pass
-        # elif word!= guessWord: 
-        #     print("T R Y ".upper())
-        #     lives-1
-        #     print("assci")
-                
-        # print("el final final")
         if not "_" in display:
             print("y o u   w o n   u   a r e   f a n s t a s t i c".upper())
             break
         
-        
-
-   
-          
-   
 def run ():
     pass
 
