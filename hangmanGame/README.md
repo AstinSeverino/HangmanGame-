@@ -1,1 +1,0 @@
-this is mi fist python project and using a python loops a module i make that project. enjoy it
