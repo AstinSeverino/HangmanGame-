@@ -1,11 +1,7 @@
-from ast import Str
-from multiprocessing import Value
-from optparse import Values
 from random import*
 import random
 import os
 
-from sqlalchemy import false, true
 endGame= False
 stages = ['''
   +---+
@@ -137,4 +133,4 @@ def run ():
 
 
 if __name__=="__main__":
-    run()
+    run()   
